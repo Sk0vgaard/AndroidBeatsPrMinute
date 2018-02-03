@@ -31,10 +31,9 @@ public class MainActivity extends AppCompatActivity {
         public void run() {
             long millis = System.currentTimeMillis() - startTime;
             int seconds = (int) (millis / 1000);
-            int minutes = seconds / 60;
             seconds = seconds % 60;
 
-            mBeatsPrMinute.setText(String.format("%d:%02d", minutes, seconds));
+            mBeatsPrMinute.setText(String.format("%02d", seconds));
 
             timerHandler.postDelayed(this, 500);
         }
@@ -92,7 +91,8 @@ public class MainActivity extends AppCompatActivity {
 
         private void beatsPerMinute() {
 
-
+//            int seconds = Integer.valueOf(mBeatsPrMinute.getText().toString());
+//            System.out.println(seconds);
 //        numberOfBeatsPrMinute = beatCount/startTime;
 //        mBeatsPrMinute.setText("Beats Per Minute: " + String.valueOf(numberOfBeatsPrMinute));
 
