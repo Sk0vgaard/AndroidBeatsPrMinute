@@ -71,39 +71,39 @@ public class MainActivity extends AppCompatActivity {
             cTimer.start();
             isStarted = true;
         }
-        handler.postDelayed(runnable, 0);
+//        handler.postDelayed(runnable, 0);
 
     }
-
-    public Runnable runnable = new Runnable() {
-
-        public void run() {
-            MillisecondTime = SystemClock.uptimeMillis() - StartTime;
-
-            UpdateTime = TimeBuff + MillisecondTime;
-
-            Seconds = (int) (UpdateTime / 1000);
-
-            Minutes = Seconds / 60;
-
-            Seconds = Seconds % 60;
-
-            MilliSeconds = (int) (UpdateTime % 1000);
-
-            mBeatsPrMinute.setText("" + Minutes + ":"
-                    + String.format("%02d", Seconds) + ":"
-                    + String.format("%03d", MilliSeconds));
-
-            handler.postDelayed(this, 0);
-        }
-
-    };
+//
+//    public Runnable runnable = new Runnable() {
+//
+//        public void run() {
+//            MillisecondTime = SystemClock.uptimeMillis() - StartTime;
+//
+//            UpdateTime = TimeBuff + MillisecondTime;
+//
+//            Seconds = (int) (UpdateTime / 1000);
+//
+//            Minutes = Seconds / 60;
+//
+//            Seconds = Seconds % 60;
+//
+//            MilliSeconds = (int) (UpdateTime % 1000);
+//
+//            mBeatsPrMinute.setText("" + Minutes + ":"
+//                    + String.format("%02d", Seconds) + ":"
+//                    + String.format("%03d", MilliSeconds));
+//
+//            handler.postDelayed(this, 0);
+//        }
+//
+//    };
 
 
         private void beatsPerMinute() {
 
-//        numberOfBeatsPrMinute = beatCount/oneMinuteCountdown;
-//        mBeatsPrMinute.setText("Beats Per Minute: " + String.valueOf(numberOfBeatsPrMinute));
+        numberOfBeatsPrMinute = beatCount/oneMinuteCountdown;
+        mBeatsPrMinute.setText("Beats Per Minute: " + String.valueOf(numberOfBeatsPrMinute));
 
     }
 
